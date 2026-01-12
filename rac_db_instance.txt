@@ -1,0 +1,5 @@
+
+NAME		INSTANCE_NAME	STATUS	   DATABASE_ROLE   OPEN_MODE	   HOST_NAME	   VERSION			      STARTUP_TIME
+--------------- --------------- ---------- --------------- --------------- --------------- ---------------------------------- -------------------
+ORCL		orcl1		OPEN	   PRIMARY	   READ WRITE	   rac1 	   19.0.0.0.0			      2025-12-31 11:34:37
+

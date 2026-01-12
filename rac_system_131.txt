@@ -1,0 +1,12 @@
+              total        used        free      shared  buff/cache   available
+Mem:            62G        5.0G         38G         15G         19G         40G
+Swap:            0B          0B          0B
+---CPU---
+CPU(s):                16
+Thread(s) per core:    1
+Core(s) per socket:    1
+---DISK---
+/dev/mapper/centos-root  1.1T  105G  946G   10% /
+/dev/sda1               1014M  175M  840M   18% /boot
+/dev/sdb1                1.2T   33M  1.2T    1% /data1
+/dev/mapper/centos-home  147G   26G  121G   18% /home

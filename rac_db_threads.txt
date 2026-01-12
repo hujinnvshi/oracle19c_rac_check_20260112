@@ -1,0 +1,6 @@
+select thread#, instance_name, status from v$thread order by thread#
+                *
+ERROR at line 1:
+ORA-00904: "INSTANCE_NAME": invalid identifier
+
+

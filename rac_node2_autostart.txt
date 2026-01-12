@@ -1,0 +1,12 @@
+enabled
+---
+● oracle-ohasd.service - Oracle High Availability Services
+   Loaded: loaded (/etc/systemd/system/oracle-ohasd.service; enabled; vendor preset: disabled)
+   Active: active (running) since 三 2025-12-31 10:41:30 CST; 1 weeks 5 days ago
+ Main PID: 1866 (init.ohasd)
+    Tasks: 1
+   CGroup: /system.slice/oracle-ohasd.service
+           ├─ 1866 /bin/sh /etc/init.d/init.ohasd run >/dev/null 2>&1 </dev/null
+           ├─ 2426 /home/grid/grid/bin/ohasd.bin reboot
+           ├─ 3190 /home/grid/grid/bin/orarootagent.bin
+           ├─ 3267 /home/grid/grid/bin/oraagent.bin

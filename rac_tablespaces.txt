@@ -1,0 +1,14 @@
+
+TABLESPACE_NAME 	  STATUS     CONTENTS
+------------------------- ---------- ------------------------------------------
+BIG_DATA		  ONLINE     PERMANENT
+ORCL_TBS		  ONLINE     PERMANENT
+SYSAUX			  ONLINE     PERMANENT
+SYSTEM			  ONLINE     PERMANENT
+TEMP			  ONLINE     TEMPORARY
+UNDOTBS1		  ONLINE     UNDO
+UNDOTBS2		  ONLINE     UNDO
+USERS			  ONLINE     PERMANENT
+
+8 rows selected.
+

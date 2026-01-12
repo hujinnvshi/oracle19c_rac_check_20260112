@@ -1,0 +1,32 @@
+总用量 4108
+drwxr-xr-x    6 root oinstall     151 9月  25 2023 .
+drwxr-xr-x. 145 root root        8192 12月 31 11:32 ..
+drwxrwx---    2 root oinstall      56 9月  25 2023 lastgasp
+drwxrwxrwt    2 root oinstall       6 9月  25 2023 maps
+-rw-r--r--    1 root oinstall     189 9月  25 2023 ocr.loc
+-rw-r--r--    1 root root           0 9月  25 2023 ocr.loc.orig
+-rw-r--r--    1 root oinstall      82 9月  25 2023 olr.loc
+-rw-r--r--    1 root root           0 9月  25 2023 olr.loc.orig
+drwxrwxr-x    5 root oinstall      44 9月  25 2023 oprocd
+drwxr-xr-x    3 root oinstall      18 9月  25 2023 scls_scr
+-rws--x---    1 root oinstall 4182584 9月  25 2023 setasmgid
+---
+-MGMTDB:/home/grid/grid:N
+---
+bash: crsctl: command not found
+---
+● oracle-ohasd.service - Oracle High Availability Services
+   Loaded: loaded (/etc/systemd/system/oracle-ohasd.service; enabled; vendor preset: disabled)
+   Active: active (running) since 三 2025-12-31 11:32:48 CST; 1 weeks 5 days ago
+ Main PID: 1860 (init.ohasd)
+    Tasks: 1
+   CGroup: /system.slice/oracle-ohasd.service
+           ├─ 1860 /bin/sh /etc/init.d/init.ohasd run >/dev/null 2>&1 </dev/null
+           ├─ 2428 /home/grid/grid/bin/ohasd.bin reboot
+           ├─ 2919 /home/grid/grid/bin/orarootagent.bin
+           ├─ 3039 /home/grid/grid/bin/oraagent.bin
+           ├─ 3103 /home/grid/grid/bin/mdnsd.bin
+           ├─ 3105 /home/grid/grid/bin/evmd.bin
+           ├─ 3137 /home/grid/grid/bin/gpnpd.bin
+           ├─ 3190 /home/grid/grid/bin/evmlogger.bin -o /home/grid/grid/log/[HOSTNAME]/evmd/evmlogger.info -l /home/grid/grid/log/[HOSTNAME]/evmd/evmlogger.log
+           ├─ 3208 /home/grid/grid/bin/gipcd.bin
