@@ -1,0 +1,118 @@
+
+================================================================================
+3. 服务器资源配置
+================================================================================
+
+节点 rac1:
+NAME=rac1
+MEMORY_SIZE=64428
+CPU_COUNT=16
+CPU_CLOCK_RATE=2399
+CPU_HYPERTHREADING=0
+CPU_EQUIVALENCY=1000
+DEPLOYMENT=other
+CONFIGURED_CSS_ROLE=hub
+RESOURCE_USE_ENABLED=1
+SERVER_LABEL=
+PHYSICAL_HOSTNAME=
+CSS_CRITICAL=no
+CSS_CRITICAL_TOTAL=0
+RESOURCE_TOTAL=0
+SITE_NAME=rac-cluster
+STATE=ONLINE
+ACTIVE_POOLS=Generic ora.orcl
+STATE_DETAILS=
+ACTIVE_CSS_ROLE=hub
+
+
+节点 rac2:
+NAME=rac2
+MEMORY_SIZE=64428
+CPU_COUNT=16
+CPU_CLOCK_RATE=2399
+CPU_HYPERTHREADING=0
+CPU_EQUIVALENCY=1000
+DEPLOYMENT=other
+CONFIGURED_CSS_ROLE=hub
+RESOURCE_USE_ENABLED=1
+SERVER_LABEL=
+PHYSICAL_HOSTNAME=
+CSS_CRITICAL=no
+CSS_CRITICAL_TOTAL=0
+RESOURCE_TOTAL=0
+SITE_NAME=rac-cluster
+STATE=ONLINE
+ACTIVE_POOLS=Generic ora.orcl
+STATE_DETAILS=
+ACTIVE_CSS_ROLE=hub
+
+
+================================================================================
+4. 集群资源状态汇总
+================================================================================
+
+--------------------------------------------------------------------------------
+Name           Target  State        Server                   State details       
+--------------------------------------------------------------------------------
+Local Resources
+--------------------------------------------------------------------------------
+ora.LISTENER.lsnr
+               ONLINE  ONLINE       rac1                     STABLE
+               ONLINE  ONLINE       rac2                     STABLE
+ora.chad
+               ONLINE  ONLINE       rac1                     STABLE
+               ONLINE  ONLINE       rac2                     STABLE
+ora.net1.network
+               ONLINE  ONLINE       rac1                     STABLE
+               ONLINE  ONLINE       rac2                     STABLE
+ora.ons
+               ONLINE  ONLINE       rac1                     STABLE
+               ONLINE  ONLINE       rac2                     STABLE
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.ASMNET1LSNR_ASM.lsnr(ora.asmgroup)
+      1        ONLINE  ONLINE       rac1                     STABLE
+      2        ONLINE  ONLINE       rac2                     STABLE
+      3        ONLINE  OFFLINE                               STABLE
+ora.CRS_GIMR.dg(ora.asmgroup)
+      1        ONLINE  ONLINE       rac1                     STABLE
+      2        ONLINE  ONLINE       rac2                     STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.DATA.dg(ora.asmgroup)
+      1        ONLINE  ONLINE       rac1                     STABLE
+      2        ONLINE  ONLINE       rac2                     STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.LISTENER_SCAN1.lsnr
+      1        ONLINE  ONLINE       rac2                     STABLE
+ora.MGMTLSNR
+      1        ONLINE  ONLINE       rac2                     169.254.13.48 10.10.
+                                                             15.134,STABLE
+ora.asm(ora.asmgroup)
+      1        ONLINE  ONLINE       rac1                     Started,STABLE
+      2        ONLINE  ONLINE       rac2                     Started,STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.asmnet1.asmnetwork(ora.asmgroup)
+      1        ONLINE  ONLINE       rac1                     STABLE
+      2        ONLINE  ONLINE       rac2                     STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.cvu
+      1        ONLINE  ONLINE       rac2                     STABLE
+ora.mgmtdb
+      1        ONLINE  ONLINE       rac2                     Open,STABLE
+ora.orcl.db
+      1        ONLINE  ONLINE       rac1                     Open,HOME=/u01/app/o
+                                                             racle/product/19.0.0
+                                                             /db_1,STABLE
+      2        ONLINE  ONLINE       rac2                     Open,HOME=/u01/app/o
+                                                             racle/product/19.0.0
+                                                             /db_1,STABLE
+ora.qosmserver
+      1        ONLINE  OFFLINE                               STABLE
+ora.rac1.vip
+      1        ONLINE  ONLINE       rac1                     STABLE
+ora.rac2.vip
+      1        ONLINE  ONLINE       rac2                     STABLE
+ora.scan1.vip
+      1        ONLINE  ONLINE       rac2                     STABLE
+--------------------------------------------------------------------------------

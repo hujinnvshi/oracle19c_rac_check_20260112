@@ -1,0 +1,4 @@
+
+集群版本信息:
+Oracle Clusterware active version on the cluster is [19.0.0.0.0]
+Oracle Clusterware version on node [rac1] is [19.0.0.0.0]

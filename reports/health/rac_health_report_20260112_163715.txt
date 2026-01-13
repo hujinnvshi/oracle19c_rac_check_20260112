@@ -1,0 +1,12 @@
+
+================================================================================
+5. 数据库实例状态
+================================================================================
+
+主节点 (rac1/orcl1):
+select d.name, i.instance_name, i.status, d.database_role, d.open_mode, i.host_name, i.version, to_char(i.startup_time, "YYYY-MM-DD HH24:MI:SS") as startup_time from v$database d, v$instance i
+                                                                                                                        *
+ERROR at line 1:
+ORA-00904: "YYYY-MM-DD HH24:MI:SS": invalid identifier
+
+
