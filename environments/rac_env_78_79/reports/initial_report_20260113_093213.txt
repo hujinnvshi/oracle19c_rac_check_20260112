@@ -1,0 +1,613 @@
+================================================================================
+                  Oracle RAC 19c 环境初始检查报告
+================================================================================
+
+环境信息:
+  环境名称: rac_env_78_79
+  检查时间: 2026年 01月 13日 星期二 09:32:13 CST
+  
+集群配置:
+  节点1: 172.16.48.78 (rac1)
+  节点2: 172.16.48.79 (racn2)
+  集群名: rac-cluster
+  数据库: ORCL
+  环境类型: production
+
+================================================================================
+1. SSH连接状态
+================================================================================
+
+节点 172.16.48.78:
+  ✓ 免密登录已配置
+  ✓ 主机名: rac1
+
+节点 172.16.48.79:
+  ✓ 免密登录已配置
+  ✓ 主机名: racn2
+
+================================================================================
+2. 集群基础状态
+================================================================================
+
+节点 rac1:
+  CRS-4639: Could not contact Oracle High Availability Services
+
+节点 racn2:
+  CRS-4638: Oracle High Availability Services is online
+  CRS-4537: Cluster Ready Services is online
+  CRS-4529: Cluster Synchronization Services is online
+  CRS-4533: Event Manager is online
+
+================================================================================
+3. 集群版本信息
+================================================================================
+
+  CRS-6750: unable to get the active version
+  CRS-6752: Active version query failed.
+
+================================================================================
+4. 集群节点信息
+================================================================================
+
+  PRCO-19: Failure retrieving list of nodes in the cluster
+  PRCO-2: Unable to communicate with the clusterware
+
+================================================================================
+5. 集群资源状态
+================================================================================
+
+  CRS-4535: Cannot communicate with Cluster Ready Services
+  CRS-4000: Command Status failed, or completed with errors.
+
+================================================================================
+6. 数据库实例状态
+================================================================================
+
+节点 rac1:
+  select instance_name, status, database_role, open_mode from v$instance
+  *
+  ERROR at line 1:
+  ORA-01034: ORACLE not available
+  Process ID: 0
+  Session ID: 0 Serial number: 0
+  
+  
+
+节点 racn2:
+  select instance_name, status from v$instance
+  *
+  ERROR at line 1:
+  ORA-01034: ORACLE not available
+  Process ID: 0
+  Session ID: 0 Serial number: 0
+  
+  
+
+================================================================================
+7. ASM磁盘组状态
+================================================================================
+
+  /var/tmp/.oracle is missing or not writable.
+  ASMCMD-9463: operation failed due to lack of write permissions
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  readdir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 949.
+  closedir() attempted on invalid dirhandle DIR at /u01/app/19.3.0/grid/bin/asmcmdcore line 966.
+  Connected to an idle instance.
+  ASMCMD-8102: no connection to Oracle ASM; command requires Oracle ASM to run
+
+================================================================================
+8. 网络配置
+================================================================================
+
+节点 rac1:
+      inet 172.16.48.78/24 brd 172.16.48.255 scope global noprefixroute ens161
+
+节点 racn2:
+      inet 172.16.48.79/24 brd 172.16.48.255 scope global noprefixroute ens161
+
+================================================================================
+9. 系统资源
+================================================================================
+
+节点 rac1:
+                total        used        free      shared  buff/cache   available
+  Mem:            19G         13G        281M        998M        5.6G        4.8G
+  Swap:           17G        4.5M         17G
+   09:33:37 up 89 days, 22:45,  1 user,  load average: 1.90, 1.43, 1.47
+
+节点 racn2:
+                total        used        free      shared  buff/cache   available
+  Mem:            15G        2.1G         11G        653M        1.9G         12G
+  Swap:           17G          0B         17G
+   09:33:38 up 12 days, 23:37,  0 users,  load average: 0.28, 0.23, 0.17
+
+================================================================================
+10. 表空间状态
+================================================================================
+
+  select tablespace_name, status from dba_tablespaces order by tablespace_name
+  *
+  ERROR at line 1:
+  ORA-01034: ORACLE not available
+  Process ID: 0
+  Session ID: 0 Serial number: 0
+  
+  
+
+================================================================================
+检查完成时间: 2026年 01月 13日 星期二 09:33:39 CST
+报告文件: environments/rac_env_78_79/reports/initial_report_20260113_093213.txt
+================================================================================

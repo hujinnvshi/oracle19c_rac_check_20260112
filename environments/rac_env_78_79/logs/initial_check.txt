@@ -1,0 +1,37 @@
+=========================================
+  Oracle RAC 19c 快速状态检查
+  检查时间: 2026-01-13 09:31:35
+=========================================
+
+【集群状态】
+  节点 172.16.48.131 CRS: [0;32m正常[0m
+  节点 172.16.48.133 CRS: [0;32m正常[0m
+
+【数据库实例】
+  节点1实例:
+    orcl1: OPEN
+  节点2实例:
+    orcl2: OPEN
+
+【集群资源】
+  ora.LISTENER.lsnr
+  ora.orcl.db
+
+【ASM磁盘组】
+awk: 1: unexpected character '\'
+awk: 1: unexpected character '\'
+awk: 1: unexpected character '\'
+
+【系统负载】
+  节点1: awk: 1: unexpected character '\'
+  节点2: awk: 1: unexpected character '\'
+
+【VIP状态】
+
+【近期告警】
+./scripts/rac_quick_check.sh: 第 90 行： [: : 需要整数表达式
+  [0;32m无严重错误告警[0m
+
+=========================================
+  快速检查完成
+=========================================
